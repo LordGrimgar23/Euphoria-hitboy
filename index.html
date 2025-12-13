@@ -1,492 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-adsense-account" content="ca-pub-3763709492403504">
-        <title>Euphoria Learning HitBoy edition</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3763709492403504" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Inter', sans-serif;
-                position: relative;
-            }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-3763709492403504">
+<title>Euphoria Learning HitBoy edition</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3763709492403504" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+position: relative;
+}
 
-            #particles-js {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: 0;
-            }
+#particles-js {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 0;
+}
 
-            .container {
-                position: relative;
-                z-index: 1;
-            }
-        </style>
-        <script>
-            function openInAboutBlank(url) {
-                const newWindow = window.open('about:blank', '_blank');
-                if (newWindow) {
-                    newWindow.document.title = "Math Practice";
-                    const iframe = newWindow.document.createElement('iframe');
-                    iframe.src = url;
-                    iframe.style.cssText = 'border: none; width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;';
-                    newWindow.document.body.style.cssText = 'margin: 0; padding: 0; overflow: hidden;';
-                    newWindow.document.body.appendChild(iframe);
-                } else {
-                    alert('Popup blocked! Please allow popups for this site to work.');
-                }
-            }
-        </script>
-    </head>
-    <body class="bg-gray-900 text-white relative">
-        <div id="particles-js"></div>
-        <div id="clock" class="absolute top-4 right-4 bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg shadow-lg hidden md:block" style="z-index: 2;"></div>
-        <div class="container mx-auto px-4 py-8 md:py-12">
-            <header class="text-center mb-8 md:mb-12">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Euphoria</h1>
-                <p class="text-gray-400 mt-2 text-lg">Welcome to Euphoria</p>
-                <div class="mt-4 inline-block">
-                    <a href="https://visitorbadge.io/status?path=https%3A%2F%2Feu4ia.netlify.app" target="_blank">
-                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Feu4ia.netlify.app&label=users&labelColor=%23d9e3f0&countColor=%23ba68c8" alt="visitor counter"/>
-                    </a>
-                </div>
-            </header>
-            <div class="mb-8 md:mb-12 max-w-2xl mx-auto">
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <input id="searchBar" type="text" placeholder="Search for a game..." class="block w-full bg-gray-800 border border-gray-700 rounded-md py-3 pl-10 pr-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
-                </div>
-            </div>
-            <main id="gameGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-                <a href="javascript:void(0);" onclick="openInAboutBlank('https://forms.gle/XNr1d9zzbntk9FBY8')" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Request a game</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('https://docs.google.com/document/d/1C2ZcslKw3Cpha483C2vq7WhzxXCcND-8dTpwcdVqrsg/edit?usp=sharing')" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Change Log/Links</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('https://docs.google.com/document/d/19jCzoisTe_k97ZOIeGqQGDTRYkI4s3VYCII7_cBrEHU/edit?usp=sharing')" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Resources</a>
-                <a href="https://discord.gg/99vMVdDGbk" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Discord</a>
-                <a href="https://buymeacoffee.com/euphoriagames" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Donate</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbasketrandom.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Basket Random</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/sandstone.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sandstone</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/cl2doom.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">2Doom</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clangrybirds.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Angry Birds</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbitlife.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">BitLife</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbloonsTD5.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bloons TD 5</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbloxorz.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bloxorz</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clclusterrush.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cluster Rush</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clcuttherope.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cut The Rope</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clfruitninja.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fruit Ninja</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clgooglebaseball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Google Baseball</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clhalflife.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Half-Life</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clinfinitecraft.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Infinite Craft</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clminecraft1-8-8.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Minecraft</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clpaperio.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Paper.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clruffle.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Flash Player</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clsliceitall.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slice It All</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clslope.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slope</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clsolarsmash.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Solar Smash</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clstickmanhook.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stickman Hook</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/shortened.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Subway Surfers</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clsugarsugar.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sugar Sugar</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/cltunnelrushbetter.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tunnel Rush</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clwebfishing.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Webfishing</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clsupermario64.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Super Mario 64</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/helios.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Helios</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clADOFAI.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">ADOFAI</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clamaze.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Amaze!</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clamongus.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Among Us</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clboxingrandom.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Boxing Random</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/cldeltarune.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Deltarune</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clultrakill.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ultrakill</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clfluidism.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fluidism</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clFNAF.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/htmleditor.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">HTML Editor</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('multi/calc/calculator.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Calculator</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('multi/gba/index.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">GBAEmulator</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clsnowrider.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Snow Rider 3D</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clpolytrackalt.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">PolyTrack</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clswordsandsandals.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Swords and Sandals</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clswordsandsandals2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Swords and Sandals 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clfridaynightfunkin.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNF</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clretrobowlfixed.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">RetroBowl</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clgeometrydashscratch.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Geometry Dash</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clemulator.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Emulator.JS</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/spacebar.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Spacebar Clicker</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/cl1v1lol.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">1v1lol</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clcookieclickercool.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cookie Clicker</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clescaperoad2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Escape Road 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Fallout.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fallout</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clgranny.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Granny</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('multi/drift/drift.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Drift Hunters</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/offlineparadise.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Offline Paradise</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/evilglitch.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Evil Glitch</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/sandgame.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sand Game</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbadpiggies.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bad Piggies</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbaldisbasicsremaster.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Baldi's Basics</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbigneontowertinysquare.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Big Tower Tiny Square</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Highway Racer.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Highway Racer</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Spiral Roll.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Spiral Roll</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Play!.js.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Play!.js</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Death Runner 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Death Runner 3D</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Hotline Miami.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hotline Miami</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Steal Brainrot Online.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Steal Brainrot Online</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('multi/wb/index.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">WBWWB</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/sh1mmer.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">sh1mmer</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/ext.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">exthang3r</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('multi/auk/auk.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">auk</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/PPG.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">People Playground</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/slowroads.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">SlowRoads</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/ai.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">AI</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/chat.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Chatroom</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Soundboard.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-3D00 transform hover:-translate-y-1">Soundboard</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Hollowknight.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hollow Knight</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/DOOM.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">DOOM</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Fancy Pants Adventure.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fancy Pants Adventure</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Kindergarten.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kindergarten</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Kindergarten 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kindergarten 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Kindergarten 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kindergarten 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/neigh.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">That's Not My Neighbor!</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Sandboxels.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sandboxels</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Slime Rancher.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slime Rancher</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/cldoblox.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doblox</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/tomb.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tomb of the Mask</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/tung.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">SAB</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Cuphead.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cuphead</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/count.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Count Masters</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/foot.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Football Bros</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/over.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Getting Over It</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Growden.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">GAG</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/issac.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Binding of Issac</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/blah.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Thirty Dollar Website</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Smash Karts.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Smash Karts</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Bouncemasters.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bounce Masters</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/City Smash.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">City Smash</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Slither.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slither.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Doodle Jump.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doodle Jump</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Blade Ball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Blade Ball</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('active/index.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">UltraViolet</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Parappa The Rapper.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Parappa The Rapper</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Clash Of Vikings.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Clash</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Shapez.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Shapez.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/The Legend of Zelda Ocarina of Time.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ocarina of Time</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/OvO.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">OvO</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Undertale Yellow.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Undertale Yellow</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Gladihoppers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Gladdihoppers</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/FNAF4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF 4</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Basket Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Basket Bros</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Station Saturn.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Station Saturn</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/omori.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">OMORI</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/repo.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">R.E.P.O</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Baseball Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Baseball Bros</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Draw Joust.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Draw Joust</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Speed Stars.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Speed Stars</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Undertale.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Undertale</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/cl99nightsitf.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">99 Nights</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Postal.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Postal</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Basketball Stars.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Basketball Stars</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/nzp.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">NZ:P</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/The Impossible Quiz.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Impossible Quiz</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/fortnite.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fortnite</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Buckshot Roulette.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Buckshot Roulette</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Escape Road.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Escape Road</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Burrito Bison.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Burrito Bison</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clbloodmoney.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bloodmoney!</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clsilk.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Silk</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/bendy.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bendy</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/exe.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sonic.EXE</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/hcr.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hill Climb Racing</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/ts.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Time Shooter 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Amanda the Adventurer.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Amanda the Adventurer</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Gobble.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Gobble</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Ragdoll Archers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ragdoll Archers</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/clironsnout.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Iron Snout</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/osu!.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">osu!</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Super Mario Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">SMB</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Trivia Crack.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Trivia Crack</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Kart Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kart Bros</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Drive Mad.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Drive Mad</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Block Blast.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Block Blast</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Drift Boss.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Drift Boss</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Pizza Tower.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Pizza Tower</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Granny 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Granny 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/UPS Delivery.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">UPS Delivery</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Slope 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slope 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Slender_ The 8 Pages.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slender The 8 Pages</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Seat Jam 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Seat Jam 3D</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Room Sort.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Room Sort</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Recoil.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Recoil</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Pizza Tower_ Scoutdigo.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Pizza Tower Scoutdigo</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Off.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Off</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Nubbys Number Factory.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Nubby's Number Factory</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Newgrounds Rumble.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Newgrounds Rumble</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Metal Gear Solid.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Metal Gear Solid</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Mega Car Jumps.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Mega Car Jumps</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Maze Speedrun.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Maze Speedrun</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/JustFall.lol.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">JustFall.lol</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Journey Downhill.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Journey Downhill</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Idle Mining Empire.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Idle Mining Empire</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Idle Lumber Inc.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Idle Lumber Inc</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/House of Hazards.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">House of Hazards</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Happy Wheels.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Happy Wheels</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/groon groon, babey!.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">groon groon, babey!</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Friday Night Funkin vs. QT.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Friday Night Funkin' vs. QT</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Generic Fighter Maybe.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Generic Fighter Maybe</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Fortzone Battle Royale.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fortzone Battle Royale</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Flick Goal.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Flick Goal</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Draw the Line.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Draw the Line</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Coreball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Coreball</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Choppy Orc.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Choppy Orc</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/CG FC 25.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">CG FC 25</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Car Survival 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Car Survival 3D</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Blocky Snakes.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Blocky Snakes</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/BuildNow.gg.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">BuildNow.gg</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Shipo.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Shipo.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Harvest.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Harvest.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/EvoWars.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">EvoWars.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Brawl Guys.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Brawl Guys.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Snowbattle.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Snowbattle.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/State.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">State.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/War Regions.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">War Regions</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wall Crawler.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wall Crawler</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Twisted Rope 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Twisted Rope 3D</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Tube Jumpers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tube Jumpers</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Tiny Fishing.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tiny Fishing</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Tomodachi Collection.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tomodachi Collection</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Three Goblets.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Three Goblets</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/TileTopia.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">TileTopia</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Territorial.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Territorial.io</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Celeste.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Celeste</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Quake III Arena.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Quake III Arena</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Tattletail.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tattletail</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Schoolboy Runaway.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Schoolboy Runaway</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Oneshot (LEGACY).html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Oneshot</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Ice Dodo.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ice Dodo</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Attack Hole.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Attack Hole</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Hide N Seek.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hide N Seek</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Magic Tiles 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Magic Tiles 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Stacky Dash.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stacky Dash</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Tall Man Run.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tall Man Run</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Monster Tracks.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Monster Tracks</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Rolly Vortex.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rolly Vortex</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Superhot.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Superhot</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Rainbow Obby.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rainbow Obby</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Sandtris.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sandtris</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Kitty Toy.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kitty Toy</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Infinimoes.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Infinimoes</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 8.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 8</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 7.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 7</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 6.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 6</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 5.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 5</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 4</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Touhou_ Luminous Strike.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Touhou Luminous Strike</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Touhou Mother.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Touhou Mother</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Toss The Turtle.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Toss The Turtle</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/They Are Coming.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">They Are Coming</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/The Deadseat.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">The Deadseat</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Tag.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tag</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Swordfight!!.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Swordfight!!</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Stone Grass Mowing Simulator.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stone Grass Mowing</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Stickman Golf.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stickman Golf</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Stickman Climb.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stickman Climb</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Run 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Run 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Run 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Run 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Run 1.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Run 1</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Rooftop Snipers 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rooftop Snipers 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Rooftop Snipers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rooftop Snipers</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 4 Vol. 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 4 Vol. 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 4 Vol. 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 4 Vol. 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 4</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Plants vs. Zombies 2 Gardenless.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">PvZ 2 Gardenless</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Plants vs Zombies.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Plants vs Zombies</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Wingeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Wingeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Taco Mia.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Taco Mia</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Sushiria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Sushiria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Scooperia.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Scooperia</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Pizeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Pizeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Pastaria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Pastaria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Pancakeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Pancakeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Hot Doggeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Hot Doggeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Freezeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Freezeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Donuteria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Donuteria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Cupcakeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Cupcakeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Cheeseria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Cheeseria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Burgeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Burgeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Bakeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Bakeria</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Mutilate a Doll 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Mutilate a Doll 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Minesweeper Plus.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Minesweeper Plus</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Granny 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Granny 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 5.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 5</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 4</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Doom 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doom 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Doom 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doom 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Daily Dadish.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Daily Dadish</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Dadish 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Dadish 3D</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Dadish 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Dadish 3</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/Dadish 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Dadish 2</a>
-                <a href="javascript:void(0);" onclick="openInAboutBlank('games/FNAF2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF 2</a>
-                
-                
-            </main>
-        </div>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const searchBar = document.getElementById('searchBar');
-                const gameGrid = document.getElementById('gameGrid');
-                const gameLinks = gameGrid.getElementsByTagName('a');
+.container {
+position: relative;
+z-index: 1;
+}
+</style>
+<script>
+function openInAboutBlank(url) {
+const newWindow = window.open('about:blank', '_blank');
+if (newWindow) {
+newWindow.document.title = "Math Practice";
+const iframe = newWindow.document.createElement('iframe');
+iframe.src = url;
+iframe.style.cssText = 'border: none; width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;';
+newWindow.document.body.style.cssText = 'margin: 0; padding: 0; overflow: hidden;';
+newWindow.document.body.appendChild(iframe);
+} else {
+alert('Popup blocked! Please allow popups for this site to work.');
+}
+}
+</script>
+</head>
+<body class="bg-gray-900 text-white relative">
+<div id="particles-js"></div>
+<div id="clock" class="absolute top-4 right-4 bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg shadow-lg hidden md:block" style="z-index: 2;"></div>
+<div class="container mx-auto px-4 py-8 md:py-12">
+<header class="text-center mb-8 md:mb-12">
+<h1 class="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Euphoria</h1>
+<p class="text-gray-400 mt-2 text-lg">Welcome to Euphoria</p>
+<div class="mt-4 inline-block">
+<a href="https://visitorbadge.io/status?path=https%3A%2F%2Feu4ia.netlify.app" target="_blank">
+<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Feu4ia.netlify.app&label=users&labelColor=%23d9e3f0&countColor=%23ba68c8" alt="visitor counter"/>
+</a>
+</div>
+</header>
+<div class="mb-8 md:mb-12 max-w-2xl mx-auto">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+</svg>
+</div>
+<input id="searchBar" type="text" placeholder="Search for a game..." class="block w-full bg-gray-800 border border-gray-700 rounded-md py-3 pl-10 pr-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+</div>
+</div>
+<main id="gameGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+<a href="javascript:void(0);" onclick="openInAboutBlank('https://forms.gle/XNr1d9zzbntk9FBY8')" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Request a game</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('https://docs.google.com/document/d/1C2ZcslKw3Cpha483C2vq7WhzxXCcND-8dTpwcdVqrsg/edit?usp=sharing')" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Change Log/Links</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('https://docs.google.com/document/d/19jCzoisTe_k97ZOIeGqQGDTRYkI4s3VYCII7_cBrEHU/edit?usp=sharing')" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Resources</a>
+<a href="https://discord.gg/99vMVdDGbk" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Discord</a>
+<a href="https://buymeacoffee.com/euphoriagames" class="bg-gray-800 hover:bg-green-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Donate</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbasketrandom.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Basket Random</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/sandstone.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sandstone</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/cl2doom.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">2Doom</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clangrybirds.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Angry Birds</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbitlife.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">BitLife</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbloonsTD5.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bloons TD 5</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbloxorz.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bloxorz</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clclusterrush.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cluster Rush</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clcuttherope.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cut The Rope</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clfruitninja.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fruit Ninja</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clgooglebaseball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Google Baseball</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clhalflife.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Half-Life</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clinfinitecraft.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Infinite Craft</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clminecraft1-8-8.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Minecraft</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clpaperio.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Paper.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clruffle.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Flash Player</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clsliceitall.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slice It All</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clslope.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slope</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clsolarsmash.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Solar Smash</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clstickmanhook.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stickman Hook</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/shortened.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Subway Surfers</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clsugarsugar.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sugar Sugar</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/cltunnelrushbetter.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tunnel Rush</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clwebfishing.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Webfishing</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clsupermario64.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Super Mario 64</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/helios.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Helios</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clADOFAI.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">ADOFAI</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clamaze.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Amaze!</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clamongus.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Among Us</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clboxingrandom.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Boxing Random</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/cldeltarune.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Deltarune</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clultrakill.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ultrakill</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clfluidism.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fluidism</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clFNAF.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/htmleditor.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">HTML Editor</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('multi/calc/calculator.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Calculator</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('multi/gba/index.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">GBAEmulator</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clsnowrider.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Snow Rider 3D</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clpolytrackalt.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">PolyTrack</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clswordsandsandals.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Swords and Sandals</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clswordsandsandals2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Swords and Sandals 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clfridaynightfunkin.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNF</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clretrobowlfixed.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">RetroBowl</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clgeometrydashscratch.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Geometry Dash</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clemulator.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Emulator.JS</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/spacebar.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Spacebar Clicker</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/cl1v1lol.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">1v1lol</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clcookieclickercool.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cookie Clicker</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clescaperoad2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Escape Road 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Fallout.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fallout</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clgranny.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Granny</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('multi/drift/drift.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Drift Hunters</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/offlineparadise.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Offline Paradise</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/evilglitch.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Evil Glitch</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/sandgame.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sand Game</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbadpiggies.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bad Piggies</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbaldisbasicsremaster.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Baldi's Basics</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbigneontowertinysquare.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Big Tower Tiny Square</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Highway Racer.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Highway Racer</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Spiral Roll.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Spiral Roll</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Play!.js.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Play!.js</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Death Runner 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Death Runner 3D</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Hotline Miami.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hotline Miami</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Steal Brainrot Online.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Steal Brainrot Online</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('multi/wb/index.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">WBWWB</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/sh1mmer.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">sh1mmer</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/ext.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">exthang3r</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('multi/auk/auk.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">auk</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/PPG.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">People Playground</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/slowroads.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">SlowRoads</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/ai.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">AI</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/chat.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Chatroom</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Soundboard.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-3D00 transform hover:-translate-y-1">Soundboard</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Hollowknight.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hollow Knight</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/DOOM.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">DOOM</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Fancy Pants Adventure.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fancy Pants Adventure</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Kindergarten.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kindergarten</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Kindergarten 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kindergarten 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Kindergarten 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kindergarten 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/neigh.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">That's Not My Neighbor!</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Sandboxels.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sandboxels</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Slime Rancher.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slime Rancher</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/cldoblox.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doblox</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/tomb.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tomb of the Mask</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/tung.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">SAB</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Cuphead.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Cuphead</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/count.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Count Masters</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/foot.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Football Bros</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/over.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Getting Over It</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Growden.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">GAG</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/issac.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Binding of Issac</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/blah.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Thirty Dollar Website</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Smash Karts.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Smash Karts</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Bouncemasters.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bounce Masters</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/City Smash.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">City Smash</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Slither.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slither.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Doodle Jump.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doodle Jump</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Blade Ball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Blade Ball</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('active/index.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">UltraViolet</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Parappa The Rapper.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Parappa The Rapper</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Clash Of Vikings.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Clash</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Shapez.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Shapez.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/The Legend of Zelda Ocarina of Time.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ocarina of Time</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/OvO.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">OvO</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Undertale Yellow.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Undertale Yellow</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Gladihoppers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Gladdihoppers</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/FNAF4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF 4</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Basket Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Basket Bros</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Station Saturn.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Station Saturn</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/omori.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">OMORI</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/repo.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">R.E.P.O</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Baseball Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Baseball Bros</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Draw Joust.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Draw Joust</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Speed Stars.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Speed Stars</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Undertale.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Undertale</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/cl99nightsitf.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">99 Nights</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Postal.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Postal</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Basketball Stars.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Basketball Stars</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/nzp.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">NZ:P</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/The Impossible Quiz.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Impossible Quiz</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/fortnite.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fortnite</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Buckshot Roulette.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Buckshot Roulette</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Escape Road.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Escape Road</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Burrito Bison.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Burrito Bison</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clbloodmoney.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bloodmoney!</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clsilk.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Silk</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/bendy.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Bendy</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/exe.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sonic.EXE</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/hcr.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hill Climb Racing</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/ts.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Time Shooter 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Amanda the Adventurer.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Amanda the Adventurer</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Gobble.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Gobble</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Ragdoll Archers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ragdoll Archers</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/clironsnout.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Iron Snout</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/osu!.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">osu!</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Super Mario Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">SMB</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Trivia Crack.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Trivia Crack</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Kart Bros.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kart Bros</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Drive Mad.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Drive Mad</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Block Blast.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Block Blast</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Drift Boss.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Drift Boss</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Pizza Tower.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Pizza Tower</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Granny 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Granny 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/UPS Delivery.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">UPS Delivery</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Slope 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slope 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Slender_ The 8 Pages.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Slender The 8 Pages</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Seat Jam 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Seat Jam 3D</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Room Sort.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Room Sort</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Recoil.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Recoil</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Pizza Tower_ Scoutdigo.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Pizza Tower Scoutdigo</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Off.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Off</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Nubbys Number Factory.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Nubby's Number Factory</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Newgrounds Rumble.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Newgrounds Rumble</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Metal Gear Solid.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Metal Gear Solid</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Mega Car Jumps.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Mega Car Jumps</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Maze Speedrun.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Maze Speedrun</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/JustFall.lol.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">JustFall.lol</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Journey Downhill.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Journey Downhill</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Idle Mining Empire.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Idle Mining Empire</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Idle Lumber Inc.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Idle Lumber Inc</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/House of Hazards.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">House of Hazards</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Happy Wheels.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Happy Wheels</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/groon groon, babey!.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">groon groon, babey!</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Friday Night Funkin vs. QT.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Friday Night Funkin' vs. QT</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Generic Fighter Maybe.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Generic Fighter Maybe</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Fortzone Battle Royale.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Fortzone Battle Royale</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Flick Goal.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Flick Goal</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Draw the Line.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Draw the Line</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Coreball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Coreball</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Choppy Orc.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Choppy Orc</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/CG FC 25.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">CG FC 25</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Car Survival 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Car Survival 3D</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Blocky Snakes.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Blocky Snakes</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/BuildNow.gg.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">BuildNow.gg</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Shipo.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Shipo.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Harvest.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Harvest.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/EvoWars.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">EvoWars.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Brawl Guys.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Brawl Guys.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Snowbattle.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Snowbattle.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/State.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">State.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/War Regions.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">War Regions</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wall Crawler.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wall Crawler</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Twisted Rope 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Twisted Rope 3D</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Tube Jumpers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tube Jumpers</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Tiny Fishing.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tiny Fishing</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Tomodachi Collection.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tomodachi Collection</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Three Goblets.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Three Goblets</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/TileTopia.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">TileTopia</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Territorial.io.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Territorial.io</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Celeste.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Celeste</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Quake III Arena.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Quake III Arena</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Tattletail.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tattletail</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Schoolboy Runaway.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Schoolboy Runaway</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Oneshot (LEGACY).html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Oneshot</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Ice Dodo.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Ice Dodo</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Attack Hole.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Attack Hole</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Hide N Seek.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Hide N Seek</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Magic Tiles 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Magic Tiles 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Stacky Dash.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stacky Dash</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Tall Man Run.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tall Man Run</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Monster Tracks.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Monster Tracks</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Rolly Vortex.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rolly Vortex</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Superhot.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Superhot</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Rainbow Obby.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rainbow Obby</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Sandtris.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Sandtris</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Kitty Toy.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Kitty Toy</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Infinimoes.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Infinimoes</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 8.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 8</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 7.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 7</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 6.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 6</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 5.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 5</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 4</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Wheely 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Wheely 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Touhou_ Luminous Strike.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Touhou Luminous Strike</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Touhou Mother.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Touhou Mother</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Toss The Turtle.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Toss The Turtle</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/They Are Coming.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">They Are Coming</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/The Deadseat.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">The Deadseat</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Tag.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Tag</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Swordfight!!.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Swordfight!!</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Stone Grass Mowing Simulator.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stone Grass Mowing</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Stickman Golf.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stickman Golf</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Stickman Climb.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Stickman Climb</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Run 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Run 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Run 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Run 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Run 1.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Run 1</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Rooftop Snipers 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rooftop Snipers 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Rooftop Snipers.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Rooftop Snipers</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 4 Vol. 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 4 Vol. 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 4 Vol. 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 4 Vol. 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 4</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Red Ball.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Red Ball</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Plants vs. Zombies 2 Gardenless.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">PvZ 2 Gardenless</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Plants vs Zombies.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Plants vs Zombies</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Wingeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Wingeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Taco Mia.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Taco Mia</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Sushiria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Sushiria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Scooperia.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Scooperia</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Pizeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Pizeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Pastaria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Pastaria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Pancakeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Pancakeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Hot Doggeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Hot Doggeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Freezeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Freezeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Donuteria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Donuteria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Cupcakeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Cupcakeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Cheeseria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Cheeseria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Burgeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Burgeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Papas Bakeria.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Papa's Bakeria</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Mutilate a Doll 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Mutilate a Doll 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Minesweeper Plus.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Minesweeper Plus</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Granny 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Granny 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 5.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 5</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 4.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 4</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Duck Life 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Duck Life 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Doom 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doom 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Doom 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Doom 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Daily Dadish.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Daily Dadish</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Dadish 3D.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Dadish 3D</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Dadish 3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Dadish 3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Dadish 2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Dadish 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/FNAF2.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Five Nights at Candy's.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Five Nights at Candy's</a>|
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/Five Nights at Candy's. 2html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">Five Nights at Candy's 2</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/FNAF3.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF3</a>
+<a href="javascript:void(0);" onclick="openInAboutBlank('games/FNAF4_Halloween.html')" class="bg-gray-800 hover:bg-purple-600 text-white font-semibold py-4 px-2 rounded-lg shadow-lg text-center transition-all duration-300 transform hover:-translate-y-1">FNAF4_Halloween</a>
 
-                searchBar.addEventListener('keyup', function() {
-                    const searchTerm = searchBar.value.toLowerCase();
 
-                    for (let i = 0; i < gameLinks.length; i++) {
-                        const gameName = gameLinks[i].textContent.toLowerCase();
-                        if (gameName.includes(searchTerm)) {
-                            gameLinks[i].style.display = '';
-                        } else {
-                            gameLinks[i].style.display = 'none';
-                        }
-                    }
-                });
 
-                const clockElement = document.getElementById('clock');
-                function updateClock() {
-                    const now = new Date();
-                    const timeString = now.toLocaleTimeString([], {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        second: '2-digit'
-                    });
-                    if (clockElement) {
-                        clockElement.textContent = timeString;
-                    }
-                }
-                setInterval(updateClock, 1000);
-                updateClock();
 
-                particlesJS("particles-js", {
-                    "particles": {
-                        "number": {
-                            "value": 80,
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
-                        "color": {
-                            "value": "#ffffff"
-                        },
-                        "shape": {
-                            "type": "circle",
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            },
-                            "polygon": {
-                                "nb_sides": 5
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.3,
-                            "random": false,
-                            "anim": {
-                                "enable": false,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 3,
-                            "random": true,
-                            "anim": {
-                                "enable": false,
-                                "speed": 40,
-                                "size_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#ffffff",
-                            "opacity": 0.2,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 2,
-                            "direction": "none",
-                            "random": false,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": false,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 140,
-                                "line_linked": {
-                                    "opacity": 0.5
-                                }
-                            },
-                            "bubble": {
-                                "distance": 400,
-                                "size": 40,
-                                "duration": 2,
-                                "opacity": 8,
-                                "speed": 3
-                            },
-                            "repulse": {
-                                "distance": 200,
-                                "duration": 0.4
-                            },
-                            "push": {
-                                "particles_nb": 4
-                            },
-                            "remove": {
-                                "particles_nb": 2
-                            }
-                        }
-                    },
-                    "retina_detect": true
-                });
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const searchBar = document.getElementById('searchBar');
+const gameGrid = document.getElementById('gameGrid');
+const gameLinks = gameGrid.getElementsByTagName('a');
 
-            }
-            );
-        </script>
-    </body>
+searchBar.addEventListener('keyup', function() {
+const searchTerm = searchBar.value.toLowerCase();
+
+for (let i = 0; i < gameLinks.length; i++) {
+const gameName = gameLinks[i].textContent.toLowerCase();
+if (gameName.includes(searchTerm)) {
+gameLinks[i].style.display = '';
+} else {
+gameLinks[i].style.display = 'none';
+}
+}
+});
+
+const clockElement = document.getElementById('clock');
+function updateClock() {
+const now = new Date();
+const timeString = now.toLocaleTimeString([], {
+hour: '2-digit',
+minute: '2-digit',
+second: '2-digit'
+});
+if (clockElement) {
+clockElement.textContent = timeString;
+}
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+particlesJS("particles-js", {
+"particles": {
+"number": {
+"value": 80,
+"density": {
+"enable": true,
+"value_area": 800
+}
+},
+"color": {
+"value": "#ffffff"
+},
+"shape": {
+"type": "circle",
+"stroke": {
+"width": 0,
+"color": "#000000"
+},
+"polygon": {
+"nb_sides": 5
+}
+},
+"opacity": {
+"value": 0.3,
+"random": false,
+"anim": {
+"enable": false,
+"speed": 1,
+"opacity_min": 0.1,
+"sync": false
+}
+},
+"size": {
+"value": 3,
+"random": true,
+"anim": {
+"enable": false,
+"speed": 40,
+"size_min": 0.1,
+"sync": false
+}
+},
+"line_linked": {
+"enable": true,
+"distance": 150,
+"color": "#ffffff",
+"opacity": 0.2,
+"width": 1
+},
+"move": {
+"enable": true,
+"speed": 2,
+"direction": "none",
+"random": false,
+"straight": false,
+"out_mode": "out",
+"bounce": false,
+"attract": {
+"enable": false,
+"rotateX": 600,
+"rotateY": 1200
+}
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+"onhover": {
+"enable": true,
+"mode": "grab"
+},
+"onclick": {
+"enable": true,
+"mode": "push"
+},
+"resize": true
+},
+"modes": {
+"grab": {
+"distance": 140,
+"line_linked": {
+"opacity": 0.5
+}
+},
+"bubble": {
+"distance": 400,
+"size": 40,
+"duration": 2,
+"opacity": 8,
+"speed": 3
+},
+"repulse": {
+"distance": 200,
+"duration": 0.4
+},
+"push": {
+"particles_nb": 4
+},
+"remove": {
+"particles_nb": 2
+}
+}
+},
+"retina_detect": true
+});
+
+}
+);
+</script>
+</body>
 </html>
