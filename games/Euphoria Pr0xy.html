@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euphoria Pr0xy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  :root {
+    --bg: #0d0a14;
+    --card: #151124;
+    --purple: #b48cff;
+    --pink: #ffb6d9;
+    --text: #ebe7f7;
+    --muted: #a59fc1;
+    --border: #2a2440;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at top, #1b1333 0%, transparent 60%),
+      var(--bg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 560px;
+    padding: 28px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #19142c, var(--card));
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,.55);
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  form {
+    display: flex;
+    gap: 10px;
+  }
+
+  input {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 15px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #0f0c1a;
+    color: var(--text);
+    outline: none;
+  }
+
+  input::placeholder { color: #7f78a1; }
+  input:focus { border-color: var(--purple); }
+
+  button {
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0b0714;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+  }
+
+  .hint {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Euphoria Pr0xy</h1>
+
+    <form id="form">
+      <input id="input" placeholder="Insert URL or search…" autocomplete="off">
+      <button type="submit">Go</button>
+    </form>
+
+     <div class="hint">Search the web with Euphoria Pr0xy</div>
+  </div>
+
+<script>
+  // Ultraviolet XOR encoder
+  function uvXor(str) {
+    let out = "";
+    for (let i = 0; i < str.length; i++) {
+      out += (i % 2)
+        ? String.fromCharCode(str.charCodeAt(i) ^ 2)
+        : str[i];
+    }
+    return out;
+  }
+
+  function encodeUV(url) {
+    return encodeURIComponent(uvXor(url));
+  }
+
+  const SERVICE = "https://glo-edward358-ai.koyeb.app/uv/service/";
+
+  document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+
+    let value = document.getElementById("input").value.trim();
+    if (!value) return;
+
+    // Convert searches to Google
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(value)) {
+      value = "https://www.google.com/search?q=" + encodeURIComponent(value);
+    }
+
+    const finalURL = SERVICE + encodeUV(value);
+
+    // ✅ REAL about:blank cloak
+    const win = window.open("about:blank", "_blank");
+    if (!win) return;
+
+    win.document.open();
+    win.document.write(`
+      <!doctype html>
+      <html>
+        <head>
+          <title>New Tab</title>
+          <meta name="referrer" content="no-referrer">
+          <style>
+            html,body,iframe {
+              margin:0;
+              width:100%;
+              height:100%;
+              border:none;
+            }
+          </style>
+        </head>
+        <body>
+          <iframe src="${finalURL}" allowfullscreen></iframe>
+        </body>
+      </html>
+    `);
+    win.document.close();
+  });
+</script>
+</body>
+</html>
