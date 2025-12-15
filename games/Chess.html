@@ -1,0 +1,58 @@
+<!-- Ultimate Game Stash file--> 
+<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <base href="https://cdn.jsdelivr.net/gh/bubbls/youtube-playables@main/chess-classic/">
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <title>Chess</title>
+    <link rel="stylesheet" href="assets/css/styles.css" nonce="l8W__iZ7xgOF2sxYxPrsbQ">
+
+    <script src="https://cdn.jsdelivr.net/gh/bubbls/youtube-playables@main/ytgame.js" nonce="l8W__iZ7xgOF2sxYxPrsbQ"></script>
+    <script nonce="l8W__iZ7xgOF2sxYxPrsbQ">ytgame.game.firstFrameReady();</script>
+
+    <!-- ---------------- API Snippet ---------------- -->
+    <script nonce="l8W__iZ7xgOF2sxYxPrsbQ">
+        window.famobi_gameID = "chess-classic"; // the actual GAMEID is added to the final version by Famobi
+        window.famobi_gameJS = [
+            "vendors.bundle.js",
+            "main.bundle.js"
+        ];
+        (function (document, url, fgJS, firstJS) {
+            fgJS = document.createElement('script');
+            firstJS = document.getElementsByTagName('script')[0];
+            fgJS.src = url + "";
+            firstJS.parentNode.insertBefore(fgJS, firstJS);
+        })(document, 'html5games/gameapi/v1.js');         
+    </script>
+
+    <!-- ---------------- API Snippet end ------------- -->
+    
+</head>
+
+<body>
+    <div id="preloader">
+        <div id="loading-text"></div>
+        <div class="lds-default">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="game-container"></div>
+<div style="position:fixed;bottom:10px;right:10px;z-index:9999;"><a href="https://noahs-calculus-tutor.pages.dev" target="_blank" style="color:white;text-decoration:none;display:flex;align-items:center;gap:8px;font-size:12px;background:rgba(0,0,0,0.8);padding:8px 12px;border-radius:6px;font-family:Arial,sans-serif;"><span>Downloaded from Noah's Tutoring Hub</span><img src="https://cdn.jsdelivr.net/gh/NoahsAmazingTutoringHelp/reimagined-octo-winner@main/pictures/5.png" style="height:18px;width:auto;"></a></div></body>
+
+</html>
