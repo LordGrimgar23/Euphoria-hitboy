@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typer</title>
+    <style>
+        :root {
+            --primary: #6e44ff;
+            --bg: #121212;
+            --text: #e0e0e0;
+            --highlight: #ffca28;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #sentence-display {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            min-height: 120px;
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: left;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: normal;
+            border: 1px solid #333;
+        }
+        .word { 
+            display: inline-block;
+            margin-right: 10px; 
+            color: #666; 
+        }
+        .current-word { 
+            color: var(--text); 
+            text-decoration: underline; 
+            font-weight: bold; 
+        }
+        .correct-word { 
+            color: var(--primary); 
+        }
+        input {
+            padding: 15px;
+            font-size: 1.2rem;
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #444;
+            background: #1e1e1e;
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+        }
+        input:focus { border-color: var(--primary); }
+        .stats {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2rem;
+        }
+        .animal-rank {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: var(--highlight);
+            font-weight: bold;
+        }
+        .leaderboard {
+            margin-top: 40px;
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border-bottom: 1px solid #333; }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #play-again-btn { display: none; background: #28a745; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Type Racer</h1>
+    <div id="sentence-display">Loading sentence...</div>
+    <input type="text" id="word-input" placeholder="Start typing the first word..." autocomplete="off">
+
+    <div class="stats">
+        <div>Time: <span id="timer">30</span>s</div>
+        <div>WPM: <span id="wpm">0</span></div>
+    </div>
+
+    <div id="result-area">
+        <div class="animal-rank" id="animal-rank"></div>
+        <button id="play-again-btn" onclick="resetGame()">Play Again</button>
+    </div>
+
+    <div class="leaderboard">
+        <h3>Local Leaderboard</h3>
+        <table id="leaderboard-table">
+            <thead>
+                <tr><th>Rank</th><th>WPM</th><th>Level</th></tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+        </table>
+        <button onclick="clearLeaderboard()" style="background:#444">Clear Scores</button>
+    </div>
+</div>
+
+<script>
+    let words = [];
+    let currentWordIndex = 0;
+    let timeLeft = 30;
+    let score = 0;
+    let isPlaying = false;
+    let timerInterval;
+
+    const sentenceDisplay = document.getElementById('sentence-display');
+    const wordInput = document.getElementById('word-input');
+    const timerDisplay = document.getElementById('timer');
+    const wpmDisplay = document.getElementById('wpm');
+    const animalDisplay = document.getElementById('animal-rank');
+    const leaderboardBody = document.getElementById('leaderboard-body');
+    const playAgainBtn = document.getElementById('play-again-btn');
+
+    async function fetchWords() {
+        try {
+            const response = await fetch('https://random-word-api.vercel.app/api?words=10');
+            let data = await response.json();
+            if (Math.random() > 0.7) data[Math.floor(Math.random() * data.length)] = "euphoria";
+            return data;
+        } catch (e) {
+            return ["euphoria", "connection", "keyboard", "typing", "speed", "logic", "window", "display", "button", "screen"];
+        }
+    }
+
+    async function nextSentence() {
+        words = await fetchWords();
+        currentWordIndex = 0;
+        renderSentence();
+    }
+
+    function renderSentence() {
+        sentenceDisplay.innerHTML = words.map((word, i) => {
+            let className = "word";
+            if (i < currentWordIndex) className = "word correct-word";
+            if (i === currentWordIndex) className = "word current-word";
+            return `<span class="${className}">${word}</span>`;
+        }).join('');
+    }
+
+    function startMatch() {
+        if (!isPlaying && wordInput.value.length > 0) {
+            isPlaying = true;
+            startTimer();
+        }
+
+        const currentWord = words[currentWordIndex];
+        const typedValue = wordInput.value.trim();
+
+        if (typedValue === currentWord && wordInput.value.endsWith(' ')) {
+            score++;
+            currentWordIndex++;
+            wordInput.value = '';
+            
+            if (currentWordIndex >= words.length) {
+                nextSentence();
+            } else {
+                renderSentence();
+            }
+        }
+    }
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                timerDisplay.innerHTML = timeLeft;
+            } else {
+                endGame();
+            }
+        }, 1000);
+    }
+
+    function getAnimal(wpm) {
+        if (wpm < 20) return "Cardboard";
+        if (wpm < 40) return "Bronze";
+        if (wpm < 60) return "Silver";
+        if (wpm < 80) return "Gold";
+        return "Diamond";
+    }
+
+    function endGame() {
+        clearInterval(timerInterval);
+        isPlaying = false;
+        wordInput.disabled = true;
+        const finalWPM = score * 2;
+        const animal = getAnimal(finalWPM);
+        wpmDisplay.innerHTML = finalWPM;
+        animalDisplay.innerHTML = `Rank: ${animal}!`;
+        playAgainBtn.style.display = "inline-block";
+        saveScore(finalWPM, animal);
+    }
+
+    function resetGame() {
+        timeLeft = 30;
+        score = 0;
+        isPlaying = false;
+        wordInput.disabled = false;
+        wordInput.value = '';
+        timerDisplay.innerHTML = timeLeft;
+        wpmDisplay.innerHTML = 0;
+        animalDisplay.innerHTML = '';
+        playAgainBtn.style.display = "none";
+        nextSentence();
+        wordInput.focus();
+    }
+
+    function saveScore(wpm, animal) {
+        let history = JSON.parse(localStorage.getItem('typingScores')) || [];
+        history.push({ wpm, animal });
+        history.sort((a, b) => b.wpm - a.wpm);
+        localStorage.setItem('typingScores', JSON.stringify(history.slice(0, 5)));
+        updateLeaderboard();
+    }
+
+    function updateLeaderboard() {
+        let history = JSON.parse(localStorage.getItem('typingScores')) || [];
+        leaderboardBody.innerHTML = history.map((entry, index) => 
+            `<tr><td>#${index + 1}</td><td>${entry.wpm}</td><td>${entry.animal}</td></tr>`
+        ).join('');
+    }
+
+    function clearLeaderboard() {
+        localStorage.removeItem('typingScores');
+        updateLeaderboard();
+    }
+
+    wordInput.addEventListener('input', startMatch);
+    nextSentence();
+    updateLeaderboard();
+</script>
+</body>
+</html>
