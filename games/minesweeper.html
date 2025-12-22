@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Minesweeper</title>
+
+<style>
+  body {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  #controls {
+    margin-bottom: 15px;
+  }
+
+  #topBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    display: grid;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .preview-tile,
+  button.tile {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    background: #ecf0f1;
+  }
+
+  button.tile {
+    background: #ddd;
+  }
+
+  button.tile.revealed {
+    cursor: default;
+  }
+
+  .bomb {
+    background: #c0392b;
+    color: white;
+  }
+
+  .safe {
+    background: #27ae60;
+    color: white;
+  }
+
+  .preset {
+    margin: 2px;
+  }
+
+  #startBtn {
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Lucky Minesweeper</h1>
+
+<div id="controls">
+
+  <div id="topBar">
+    <b>Presets:</b>
+    <button class="preset" onclick="setPreset(5, 3)">Easy</button>
+    <button class="preset" onclick="setPreset(6, 6)">Medium</button>
+    <button class="preset" onclick="setPreset(8, 10)">Hard</button>
+    <button id="startBtn" onclick="startGame()">▶ Start</button>
+  </div>
+
+  <br>
+
+  <b>Custom:</b><br>
+  Grid Size:
+  <input id="sizeInput" type="number" min="2" max="10" value="5" oninput="updatePreview()">
+  Safe Tiles:
+  <input id="safeInput" type="number" min="1" value="3" oninput="updatePreview()">
+
+  <p id="previewText"></p>
+  <div id="previewGrid" class="grid"></div>
+</div>
+
+<p id="stats"></p>
+<div id="gameGrid" class="grid"></div>
+<p id="message"></p>
+
+<script>
+let SIZE = 0;
+let SAFE_COUNT = 0;
+let board = [];
+let revealed = [];
+let revealedSafeCount = 0;
+let gameOver = false;
+
+function setPreset(size, safe) {
+  document.getElementById("sizeInput").value = size;
+  document.getElementById("safeInput").value = safe;
+  updatePreview();
+}
+
+function updatePreview() {
+  const size = Number(document.getElementById("sizeInput").value);
+  const safe = Number(document.getElementById("safeInput").value);
+  const total = size * size;
+
+  document.getElementById("previewText").textContent =
+    `Grid: ${size} × ${size} (${total} tiles) | Safe: ${safe}`;
+
+  renderPreviewGrid(size);
+}
+
+function renderPreviewGrid(size) {
+  const grid = document.getElementById("previewGrid");
+  grid.innerHTML = "";
+  grid.style.gridTemplateColumns = `repeat(${size}, 40px)`;
+
+  for (let i = 0; i < size * size; i++) {
+    const tile = document.createElement("div");
+    tile.className = "preview-tile";
+    grid.appendChild(tile);
+  }
+}
+
+function startGame() {
+  SIZE = Number(document.getElementById("sizeInput").value);
+  SAFE_COUNT = Number(document.getElementById("safeInput").value);
+  const totalTiles = SIZE * SIZE;
+
+  if (SAFE_COUNT <= 0 || SAFE_COUNT >= totalTiles) {
+    alert("Safe tiles must be between 1 and total tiles - 1.");
+    return;
+  }
+
+  gameOver = false;
+  revealedSafeCount = 0;
+  board = Array(totalTiles).fill("bomb");
+  revealed = Array(totalTiles).fill(false);
+
+  let placed = 0;
+  while (placed < SAFE_COUNT) {
+    const i = Math.floor(Math.random() * totalTiles);
+    if (board[i] !== "safe") {
+      board[i] = "safe";
+      placed++;
+    }
+  }
+
+  document.getElementById("previewGrid").innerHTML = "";
+  document.getElementById("message").textContent = "";
+  updateStats();
+  renderGameGrid();
+}
+
+function updateStats() {
+  document.getElementById("stats").textContent =
+    `Safe Found: ${revealedSafeCount}/${SAFE_COUNT}`;
+}
+
+function renderGameGrid() {
+  const grid = document.getElementById("gameGrid");
+  grid.innerHTML = "";
+  grid.style.gridTemplateColumns = `repeat(${SIZE}, 40px)`;
+
+  board.forEach((_, index) => {
+    const btn = document.createElement("button");
+    btn.className = "tile";
+    btn.onclick = () => clickTile(index, btn);
+    grid.appendChild(btn);
+  });
+}
+
+function clickTile(index, btn) {
+  if (gameOver || revealed[index]) return;
+
+  revealed[index] = true;
+  btn.classList.add("revealed");
+
+  if (board[index] === "bomb") {
+    btn.textContent = "💣";
+    btn.classList.add("bomb");
+    endGame(false);
+    return;
+  }
+
+  btn.textContent = "✔";
+  btn.classList.add("safe");
+  revealedSafeCount++;
+  updateStats();
+
+  if (revealedSafeCount === SAFE_COUNT) {
+    endGame(true);
+  }
+}
+
+function endGame(win) {
+  gameOver = true;
+
+  const tiles = document.querySelectorAll("#gameGrid .tile");
+  tiles.forEach((btn, i) => {
+    if (!revealed[i]) {
+      btn.textContent = board[i] === "safe" ? "✔" : "💣";
+      btn.classList.add(board[i]);
+    }
+  });
+
+  document.getElementById("message").textContent =
+    win ? "🎉 You found all safe tiles! You win!" : "💥 You hit a bomb!";
+}
+
+// Initialize preview
+updatePreview();
+</script>
+
+</body>
+</html>
