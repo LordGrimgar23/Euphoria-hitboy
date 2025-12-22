@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Million Click Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        .click-btn {
+            transition: all 0.05s ease;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .click-btn:active, .click-btn.active-key {
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5) inset;
+            background-color: #1e3a8a;
+        }
+
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+            font-weight: bold;
+            color: #60a5fa;
+            user-select: none;
+            z-index: 50;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569; 
+            border-radius: 4px;
+        }
+
+        .shop-item {
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .shop-item:hover:not(:disabled) {
+            transform: translateY(-2px);
+            background-color: #1e293b;
+        }
+        .shop-item:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+    </style>
+</head>
+<body class="h-screen w-full flex flex-col items-center justify-between py-6 relative">
+
+    <div id="fullscreen-msg" class="fixed top-4 left-1/2 -translate-x-1/2 bg-blue-900/90 text-blue-200 px-4 py-2 rounded-full text-xs font-bold z-50 flex items-center gap-2 border border-blue-500/50 shadow-lg cursor-pointer hover:bg-blue-800 transition-colors animate-pulse" onclick="this.remove()">
+        <i class="fas fa-expand"></i> For best experience, please use Full Screen
+    </div>
+
+    <div class="w-full max-w-2xl px-4 flex flex-col items-center gap-2 z-10">
+        <h1 class="text-xl md:text-2xl font-bold text-blue-400 uppercase tracking-widest">Goal: 1,000,000</h1>
+        
+        <div class="w-full bg-gray-800 h-6 rounded-full relative overflow-hidden border border-gray-700 group cursor-help">
+            <div id="progress-fill" class="bg-gradient-to-r from-blue-600 to-purple-500 h-full transition-all duration-200" style="width: 0%"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold text-white drop-shadow-md">
+                <span id="progress-text">0.000%</span>
+            </div>
+            <div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-black text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
+                Total Lifetime Clicks (Never decreases)
+            </div>
+        </div>
+
+        <div class="mt-2 text-center">
+            <p class="text-gray-400 text-xs uppercase">Current Rank</p>
+            <h2 id="rank-display" class="text-xl font-bold text-purple-300">Novice Clicker</h2>
+        </div>
+    </div>
+
+    <div class="flex-1 flex flex-col items-center justify-center w-full z-10">
+        
+        <div class="text-center mb-8 relative">
+            <div id="count-display" class="text-6xl md:text-8xl font-bold text-white tabular-nums tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">0</div>
+            <p class="text-gray-500 text-sm mt-2">Total Lifetime Clicks</p>
+            
+            <div class="text-xs text-blue-400 mt-1 h-4">
+                <span id="cps-display" class="hidden">0 clicks/sec</span>
+            </div>
+        </div>
+
+        <button id="main-btn" class="noselect click-btn w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-blue-500 bg-gray-900 flex flex-col items-center justify-center gap-4 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-500/50 cursor-pointer group relative">
+            <i class="fas fa-hand-pointer text-6xl text-blue-500 group-hover:text-blue-400 transition-colors"></i>
+            <span class="text-gray-400 text-sm font-bold">CLICK or SPACE</span>
+            
+            <div id="power-indicator" class="absolute bottom-10 bg-blue-900/80 px-3 py-1 rounded-full text-xs font-bold text-blue-200 hidden">
+                +1 Power
+            </div>
+        </button>
+
+        <div class="mt-8 flex gap-4">
+            <button onclick="openShop()" class="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-bold shadow-lg transition-all active:scale-95">
+                <i class="fas fa-shopping-cart"></i> Upgrade Shop
+            </button>
+        </div>
+    </div>
+
+    <div class="w-full max-w-2xl px-4 flex justify-between items-end z-10 mb-4">
+        <button onclick="resetProgress()" class="text-red-500 hover:text-red-400 text-xs underline decoration-dotted">Reset All</button>
+        <div class="text-right">
+            <p class="text-gray-400 text-xs">Next Rank at:</p>
+            <p id="next-rank-at" class="text-white text-sm font-bold">100</p>
+        </div>
+    </div>
+
+    <div id="shop-modal" class="fixed inset-0 bg-black/90 z-40 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-700 w-full max-w-lg h-[80vh] rounded-xl flex flex-col shadow-2xl relative">
+            
+            <div class="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-800 rounded-t-xl">
+                <div>
+                    <h2 class="text-xl font-bold text-yellow-400"><i class="fas fa-bolt mr-2"></i>Upgrades</h2>
+                    <p class="text-xs text-gray-400">Spend your clicks to click faster!</p>
+                </div>
+                <button onclick="closeShop()" class="text-gray-400 hover:text-white p-2">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <div class="bg-gray-950 p-2 text-center border-b border-gray-800">
+                <span class="text-gray-400 text-xs">Available Currency:</span>
+                <span id="shop-balance" class="text-white font-bold ml-2 text-lg">0</span>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-4 space-y-4" id="shop-container">
+            </div>
+        </div>
+    </div>
+
+    <div id="victory-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
+        <div class="bg-gray-900 border border-gold-500 p-8 rounded-2xl max-w-md text-center shadow-[0_0_50px_rgba(255,215,0,0.3)]">
+            <i class="fas fa-trophy text-6xl text-yellow-400 mb-6 animate-bounce"></i>
+            <h2 class="text-3xl font-bold text-white mb-4">LEGENDARY!</h2>
+            <p class="text-gray-300 mb-6">You have reached 1,000,000 lifetime clicks. You are a clicking machine.</p>
+            <button onclick="document.getElementById('victory-modal').classList.add('hidden')" class="px-6 py-3 bg-yellow-600 hover:bg-yellow-500 text-white font-bold rounded-lg transition-colors">
+                Close & Continue Clicking
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const TARGET = 1000000;
+        
+        let gameState = {
+            currentClicks: 0,
+            lifetimeClicks: 0,
+            clickPower: 1,
+            autoClickers: 0,
+            upgrades: {
+                'doubleTap': 0,
+                'superStrength': 0,
+                'mouseBot': 0,
+                'clickFarm': 0
+            }
+        };
+
+        const shopItems = [
+            {
+                id: 'doubleTap',
+                name: 'Double Tap',
+                icon: 'fa-hand-pointer',
+                description: '+1 Click Power',
+                type: 'click',
+                baseCost: 50,
+                power: 1,
+                costMultiplier: 1.5
+            },
+            {
+                id: 'mouseBot',
+                name: 'Mouse Bot',
+                icon: 'fa-robot',
+                description: '+1 Click per second',
+                type: 'auto',
+                baseCost: 100,
+                power: 1,
+                costMultiplier: 1.2
+            },
+            {
+                id: 'superStrength',
+                name: 'Power Glove',
+                icon: 'fa-fist-raised',
+                description: '+5 Click Power',
+                type: 'click',
+                baseCost: 500,
+                power: 5,
+                costMultiplier: 1.6
+            },
+            {
+                id: 'clickFarm',
+                name: 'Click Farm',
+                icon: 'fa-server',
+                description: '+10 Clicks per second',
+                type: 'auto',
+                baseCost: 1000,
+                power: 10,
+                costMultiplier: 1.3
+            }
+        ];
+        
+        const countDisplay = document.getElementById('count-display');
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        const rankDisplay = document.getElementById('rank-display');
+        const nextRankDisplay = document.getElementById('next-rank-at');
+        const mainBtn = document.getElementById('main-btn');
+        const victoryModal = document.getElementById('victory-modal');
+        const shopModal = document.getElementById('shop-modal');
+        const shopContainer = document.getElementById('shop-container');
+        const shopBalance = document.getElementById('shop-balance');
+        const cpsDisplay = document.getElementById('cps-display');
+        const powerIndicator = document.getElementById('power-indicator');
+
+        const ranks = [
+            { limit: 0, title: "Novice Clicker" },
+            { limit: 100, title: "Finger Warmer" },
+            { limit: 500, title: "Button Masher" },
+            { limit: 1000, title: "The 1K Club" },
+            { limit: 5000, title: "Dedicated Presser" },
+            { limit: 10000, title: "Ten Thousand Strong" },
+            { limit: 25000, title: "Carpal Tunnel Risker" },
+            { limit: 50000, title: "Halfway to 100k" },
+            { limit: 100000, title: "Centurion of Clicks" },
+            { limit: 250000, title: "Quarter Millionaire" },
+            { limit: 500000, title: "Half Millionaire" },
+            { limit: 750000, title: "The Final Stretch" },
+            { limit: 900000, title: "SO CLOSE" },
+            { limit: 990000, title: "Final Countdown" },
+            { limit: 1000000, title: "GOD HAND" }
+        ];
+
+        function init() {
+            const savedLegacy = localStorage.getItem('million_click_progress');
+            const savedState = localStorage.getItem('million_click_gamestate');
+
+            if (savedState) {
+                gameState = JSON.parse(savedState);
+            } else if (savedLegacy) {
+                const count = parseInt(savedLegacy, 10) || 0;
+                gameState.currentClicks = count;
+                gameState.lifetimeClicks = count;
+            }
+
+            setInterval(autoClickLoop, 1000);
+
+            renderShop();
+            updateUI();
+        }
+
+        function saveGame() {
+            localStorage.setItem('million_click_gamestate', JSON.stringify(gameState));
+        }
+
+        function addClicks(amount, isAuto = false, x, y) {
+            if (gameState.lifetimeClicks >= TARGET && gameState.currentClicks >= TARGET) {
+            }
+
+            const oldLifetime = gameState.lifetimeClicks;
+            
+            gameState.currentClicks += amount;
+            gameState.lifetimeClicks += amount;
+
+            if (oldLifetime < TARGET && gameState.lifetimeClicks >= TARGET) {
+                triggerVictory();
+            }
+
+            if (gameState.lifetimeClicks % 10 === 0) saveGame();
+            
+            if (!isAuto) {
+                createParticle(x, y, amount);
+            }
+
+            updateUI();
+        }
+
+        function autoClickLoop() {
+            if (gameState.autoClickers > 0) {
+                addClicks(gameState.autoClickers, true);
+                
+                const btnRect = mainBtn.getBoundingClientRect();
+                const x = btnRect.left + btnRect.width / 2;
+                const y = btnRect.top + btnRect.height / 2;
+                createFloatingText(x, y, `+${gameState.autoClickers}`, 'text-gray-500', 0.5);
+            }
+        }
+
+        function getCost(item) {
+            const count = gameState.upgrades[item.id] || 0;
+            return Math.floor(item.baseCost * Math.pow(item.costMultiplier, count));
+        }
+
+        function buyUpgrade(itemId) {
+            const item = shopItems.find(i => i.id === itemId);
+            const cost = getCost(item);
+
+            if (gameState.currentClicks >= cost) {
+                gameState.currentClicks -= cost;
+                gameState.upgrades[itemId] = (gameState.upgrades[itemId] || 0) + 1;
+                
+                if (item.type === 'click') {
+                    gameState.clickPower += item.power;
+                } else {
+                    gameState.autoClickers += item.power;
+                }
+
+                saveGame();
+                updateUI();
+                renderShop();
+                
+                const btn = document.getElementById(`btn-${itemId}`);
+                if(btn) {
+                    btn.classList.add('scale-95', 'bg-green-600');
+                    setTimeout(() => btn.classList.remove('scale-95', 'bg-green-600'), 200);
+                }
+            }
+        }
+
+        function updateUI() {
+            // Main display now shows LIFETIME clicks (Total Progress)
+            countDisplay.textContent = Math.floor(gameState.lifetimeClicks).toLocaleString();
+            
+            // Shop balance shows CURRENT clicks (Currency)
+            shopBalance.textContent = Math.floor(gameState.currentClicks).toLocaleString();
+            
+            if (gameState.autoClickers > 0) {
+                cpsDisplay.textContent = `${gameState.autoClickers} clicks/sec`;
+                cpsDisplay.classList.remove('hidden');
+            }
+            
+            if (gameState.clickPower > 1) {
+                powerIndicator.textContent = `+${gameState.clickPower} Power`;
+                powerIndicator.classList.remove('hidden');
+            }
+
+            const percentage = Math.min((gameState.lifetimeClicks / TARGET) * 100, 100);
+            progressFill.style.width = `${percentage}%`;
+            progressText.textContent = `${percentage.toFixed(4)}%`;
+
+            let currentRank = ranks[0];
+            let nextRank = null;
+
+            for (let i = 0; i < ranks.length; i++) {
+                if (gameState.lifetimeClicks >= ranks[i].limit) {
+                    currentRank = ranks[i];
+                } else {
+                    nextRank = ranks[i];
+                    break;
+                }
+            }
+
+            rankDisplay.textContent = currentRank.title;
+            
+            if (nextRank) {
+                nextRankDisplay.textContent = nextRank.limit.toLocaleString();
+            } else {
+                nextRankDisplay.textContent = "MAX";
+            }
+            
+            checkShopAffordability();
+        }
+
+        function renderShop() {
+            shopContainer.innerHTML = '';
+            
+            shopItems.forEach(item => {
+                const cost = getCost(item);
+                const count = gameState.upgrades[item.id] || 0;
+                
+                const div = document.createElement('div');
+                div.className = 'bg-gray-800 p-3 rounded-lg flex items-center justify-between shop-item border border-gray-700';
+                div.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-blue-400 text-xl">
+                            <i class="fas ${item.icon}"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white">${item.name} <span class="text-xs text-gray-500 bg-gray-900 px-2 py-0.5 rounded-full ml-2">Lvl ${count}</span></h3>
+                            <p class="text-xs text-gray-400">${item.description}</p>
+                        </div>
+                    </div>
+                    <button id="btn-${item.id}" onclick="buyUpgrade('${item.id}')" 
+                        class="px-4 py-2 rounded font-bold text-sm transition-colors flex flex-col items-end min-w-[100px]
+                        ${gameState.currentClicks >= cost ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-gray-700 text-gray-500 cursor-not-allowed'}">
+                        <span>Buy</span>
+                        <span class="text-xs opacity-90"><i class="fas fa-mouse"></i> ${cost.toLocaleString()}</span>
+                    </button>
+                `;
+                
+                const btn = div.querySelector('button');
+                if (gameState.currentClicks < cost) {
+                    btn.disabled = true;
+                }
+                
+                shopContainer.appendChild(div);
+            });
+        }
+
+        function checkShopAffordability() {
+            shopItems.forEach(item => {
+                const btn = document.getElementById(`btn-${item.id}`);
+                if (btn) {
+                    const cost = getCost(item);
+                    if (gameState.currentClicks >= cost) {
+                        btn.disabled = false;
+                        btn.classList.remove('bg-gray-700', 'text-gray-500', 'cursor-not-allowed');
+                        btn.classList.add('bg-blue-600', 'hover:bg-blue-500', 'text-white');
+                    } else {
+                        btn.disabled = true;
+                        btn.classList.add('bg-gray-700', 'text-gray-500', 'cursor-not-allowed');
+                        btn.classList.remove('bg-blue-600', 'hover:bg-blue-500', 'text-white');
+                    }
+                }
+            });
+        }
+
+        function createParticle(x, y, amount) {
+            createFloatingText(x, y, `+${amount}`, 'text-blue-400', 1.5);
+        }
+
+        function createFloatingText(x, y, text, colorClass, scale = 1) {
+             const particle = document.createElement('div');
+            particle.classList.add('particle', colorClass);
+            particle.textContent = text;
+            
+            const jitterX = (Math.random() - 0.5) * 40;
+            
+            if (x === undefined || y === undefined) {
+                const btnRect = mainBtn.getBoundingClientRect();
+                x = btnRect.left + btnRect.width / 2;
+                y = btnRect.top + btnRect.height / 2;
+            }
+
+            particle.style.left = `${x + jitterX}px`;
+            particle.style.top = `${y}px`;
+            particle.style.fontSize = `${16 * scale}px`; 
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000);
+        }
+
+        function openShop() {
+            shopModal.classList.remove('hidden');
+            renderShop();
+        }
+
+        function closeShop() {
+            shopModal.classList.add('hidden');
+        }
+
+        function triggerVictory() {
+            victoryModal.classList.remove('hidden');
+            confettiEffect();
+        }
+
+        function resetProgress() {
+            if(confirm("FULL RESET: This deletes your rank, upgrades, and clicks. Are you sure?")) {
+                localStorage.removeItem('million_click_progress');
+                localStorage.removeItem('million_click_gamestate');
+                location.reload();
+            }
+        }
+
+        function confettiEffect() {
+            for(let i=0; i<100; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.style.position = 'fixed';
+                    el.style.left = Math.random() * 100 + 'vw';
+                    el.style.top = '-10vh';
+                    el.textContent = ['🎉', '🎊', '✨', '🏆'][Math.floor(Math.random()*4)];
+                    el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    el.style.transition = `top ${Math.random() * 2 + 1}s ease-in, transform 2s linear`;
+                    el.style.zIndex = '100';
+                    document.body.appendChild(el);
+
+                    requestAnimationFrame(() => {
+                        el.style.top = '110vh';
+                        el.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    });
+
+                    setTimeout(() => el.remove(), 3000);
+                }, i * 50);
+            }
+        }
+
+        mainBtn.addEventListener('mousedown', (e) => {
+            addClicks(gameState.clickPower, false, e.clientX, e.clientY);
+        });
+
+        mainBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            addClicks(gameState.clickPower, false, touch.clientX, touch.clientY);
+            mainBtn.classList.add('active-key');
+        }, { passive: false });
+
+        mainBtn.addEventListener('touchend', () => {
+            mainBtn.classList.remove('active-key');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault(); 
+                if (!e.repeat) { 
+                    mainBtn.classList.add('active-key');
+                    addClicks(gameState.clickPower, false); 
+                }
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (e.code === 'Space') {
+                mainBtn.classList.remove('active-key');
+            }
+        });
+
+        shopModal.addEventListener('click', (e) => {
+            if (e.target === shopModal) closeShop();
+        });
+
+        init();
+
+    </script>
+</body>
+</html>
