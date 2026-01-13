@@ -17,12 +17,10 @@
       --user:#93c5fd;
       --bad:#fb7185;
       --ok:#34d399;
-
       --sel:#1f2937;
       --peer:#111c2d;
       --same:#0b2a4d;
     }
-
     html,body{height:100%;}
     body{
       margin:0;
@@ -33,7 +31,6 @@
       align-items:center;
       justify-content:center;
     }
-
     .wrap{
       width:min(980px, 96vw);
       display:grid;
@@ -41,7 +38,6 @@
       gap:16px;
       padding:20px 0;
     }
-
     .top{
       display:flex;
       flex-wrap:wrap;
@@ -63,7 +59,6 @@
       font-size:13px;
       color:var(--muted);
     }
-
     .panel{
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       border:1px solid rgba(148,163,184,0.18);
@@ -71,7 +66,6 @@
       padding:14px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
-
     .controls{
       display:flex;
       flex-wrap:wrap;
@@ -79,7 +73,6 @@
       align-items:center;
       justify-content:flex-end;
     }
-
     button{
       appearance:none;
       border:1px solid rgba(148,163,184,0.22);
@@ -96,7 +89,6 @@
     }
     button:hover{ background: rgba(17,24,39,0.85); border-color: rgba(148,163,184,0.32); }
     button:active{ transform: translateY(1px); }
-
     .status{
       margin-top:10px;
       font-size:13px;
@@ -106,13 +98,11 @@
       gap:10px;
       flex-wrap:wrap;
     }
-
     .board{
       display:grid;
       grid-template-columns: 1fr;
       gap:14px;
     }
-
     .grid{
       width:min(540px, 92vw);
       aspect-ratio:1/1;
@@ -124,7 +114,6 @@
       border-radius:14px;
       overflow:hidden;
     }
-
     .cell{
       display:flex;
       align-items:center;
@@ -138,29 +127,23 @@
       position:relative;
       outline:none;
     }
-
     .cell.given{
       color:var(--given);
       font-weight:800;
       background: rgba(15,23,42,0.55);
       cursor:default;
     }
-
-    /* 3x3 thick lines */
     .cell[data-c="2"], .cell[data-c="5"]{ border-right:2px solid rgba(148,163,184,0.55); }
     .cell[data-c="3"], .cell[data-c="6"]{ border-left:2px solid rgba(148,163,184,0.55); }
     .cell[data-r="2"], .cell[data-r="5"]{ border-bottom:2px solid rgba(148,163,184,0.55); }
     .cell[data-r="3"], .cell[data-r="6"]{ border-top:2px solid rgba(148,163,184,0.55); }
-
     .cell.selected{ background: rgba(31,41,55,0.75); }
     .cell.peer{ background: rgba(17,28,45,0.65); }
     .cell.same{ background: rgba(11,42,77,0.65); }
-
     .cell.bad{
       color: var(--bad);
       text-shadow: 0 0 14px rgba(251,113,133,0.25);
     }
-
     .hintRow{
       display:flex;
       gap:10px;
@@ -170,7 +153,6 @@
       font-size:13px;
       text-align:center;
     }
-
     .kbd{
       padding:2px 6px;
       border:1px solid rgba(148,163,184,0.25);
@@ -193,11 +175,9 @@
       <div class="controls">
         <button id="newBtn">New Puzzle</button>
         <button id="resetBtn">Reset</button>
-        <button id="checkBtn">Check</button>
         <button id="solveBtn">Solve</button>
       </div>
     </div>
-
     <div class="board panel">
       <div id="grid" class="grid" aria-label="Sudoku grid" role="grid"></div>
       <div class="hintRow">
@@ -209,81 +189,60 @@
       </div>
     </div>
   </div>
-
 <script>
 (() => {
-  // Puzzles: 0 = blank. (A small curated set; "New Puzzle" picks randomly.)
-  // If you want more, add 81-length arrays below.
   const PUZZLES = [
-    // Easy-ish
     [
       0,0,0, 2,6,0, 7,0,1,
       6,8,0, 0,7,0, 0,9,0,
       1,9,0, 0,0,4, 5,0,0,
-
       8,2,0, 1,0,0, 0,4,0,
       0,0,4, 6,0,2, 9,0,0,
       0,5,0, 0,0,3, 0,2,8,
-
       0,0,9, 3,0,0, 0,7,4,
       0,4,0, 0,5,0, 0,3,6,
       7,0,3, 0,1,8, 0,0,0
     ],
-    // Medium
     [
       0,2,0, 6,0,8, 0,0,0,
       5,8,0, 0,0,9, 7,0,0,
       0,0,0, 0,4,0, 0,0,0,
-
       3,7,0, 0,0,0, 5,0,0,
       6,0,0, 0,0,0, 0,0,4,
       0,0,8, 0,0,0, 0,1,3,
-
       0,0,0, 0,2,0, 0,0,0,
       0,0,9, 8,0,0, 0,3,6,
       0,0,0, 3,0,6, 0,9,0
     ],
-    // Hard-ish
     [
       0,0,0, 0,0,0, 0,1,2,
       0,0,0, 0,0,7, 0,0,0,
       0,0,1, 0,9,0, 0,0,0,
-
       0,0,0, 0,0,0, 3,0,0,
       0,0,0, 5,0,9, 0,0,0,
       0,0,8, 0,0,0, 0,0,0,
-
       0,0,0, 0,4,0, 2,0,0,
       0,0,0, 7,0,0, 0,0,0,
       6,9,0, 0,0,0, 0,0,0
     ]
   ];
-
   const gridEl = document.getElementById('grid');
   const msgEl = document.getElementById('msg');
   const metaEl = document.getElementById('meta');
-
   const newBtn = document.getElementById('newBtn');
   const resetBtn = document.getElementById('resetBtn');
-  const checkBtn = document.getElementById('checkBtn');
   const solveBtn = document.getElementById('solveBtn');
-
   let given = [];
   let board = [];
   let solution = null;
-
   let selected = { r: 0, c: 0 };
-
   function rcToI(r,c){ return r*9+c; }
   function boxIndex(r,c){ return Math.floor(r/3)*3 + Math.floor(c/3); }
-
   function setMessage(text, kind="muted"){
     msgEl.textContent = text;
     msgEl.style.color = (kind==="ok") ? "var(--ok)" : (kind==="bad") ? "var(--bad)" : "var(--muted)";
   }
-
   function clone(arr){ return arr.slice(); }
-
   function buildGrid(){
     gridEl.innerHTML = "";
     for(let r=0;r<9;r++){
@@ -299,31 +258,34 @@
       }
     }
   }
-
   function render(){
     const cells = gridEl.children;
+    let isFull = true;
+    let hasError = false;
     for(let r=0;r<9;r++){
       for(let c=0;c<9;c++){
         const i = rcToI(r,c);
         const cell = cells[i];
         const v = board[i];
         const g = given[i] !== 0;
-
         cell.textContent = v === 0 ? "" : String(v);
         cell.classList.toggle("given", g);
         cell.classList.remove("selected","peer","same","bad");
+        if(v===0) isFull = false;
+        if(v !== 0 && solution && v !== solution[i]){
+            cell.classList.add("bad");
+            hasError = true;
+        }
       }
     }
     applyHighlights();
     metaEl.textContent = `Filled: ${board.filter(x=>x!==0).length}/81`;
+    if(isFull && !hasError) setMessage("Solved! ✅", "ok");
   }
-
   function applyHighlights(){
     const cells = gridEl.children;
     const selI = rcToI(selected.r, selected.c);
     const selVal = board[selI];
-
-    // Peers: same row/col/box
     for(let r=0;r<9;r++){
       for(let c=0;c<9;c++){
         const i = rcToI(r,c);
@@ -331,53 +293,40 @@
         const isSel = (r===selected.r && c===selected.c);
         const isPeer = (r===selected.r) || (c===selected.c) || (boxIndex(r,c)===boxIndex(selected.r,selected.c));
         const isSame = (selVal!==0 && board[i]===selVal);
-
         if(isSel) cell.classList.add("selected");
         else if(isPeer) cell.classList.add("peer");
-
         if(isSame && !isSel) cell.classList.add("same");
       }
     }
   }
-
   function selectCell(r,c){
     selected = { r, c };
     applyHighlights();
-    // Focus the selected cell for keyboard use
     const i = rcToI(r,c);
     gridEl.children[i].focus();
   }
-
   function loadPuzzle(puz){
     given = clone(puz);
     board = clone(puz);
     solution = null;
-
-    // Precompute solution (so Solve is instant, and Check can validate completion)
     const candidate = clone(puz);
     if (solveInPlace(candidate)) solution = candidate;
     else solution = null;
-
     render();
     setMessage("New puzzle loaded.");
     selectCell(0,0);
   }
-
   function randomPuzzle(){
     const idx = Math.floor(Math.random() * PUZZLES.length);
     return { puzzle: PUZZLES[idx], index: idx };
   }
-
   function reset(){
     board = clone(given);
     render();
     setMessage("Reset to original puzzle.");
   }
-
   function inRange(v){ return v>=1 && v<=9; }
-
   function isValidMove(arr, r, c, v){
-    // v in 1..9. check row/col/box constraints, ignoring current cell.
     for(let k=0;k<9;k++){
       if(k!==c && arr[rcToI(r,k)]===v) return false;
       if(k!==r && arr[rcToI(k,c)]===v) return false;
@@ -391,52 +340,10 @@
     }
     return true;
   }
-
-  function markConflicts(){
-    const cells = gridEl.children;
-    let conflicts = 0;
-    for(let r=0;r<9;r++){
-      for(let c=0;c<9;c++){
-        const i = rcToI(r,c);
-        const v = board[i];
-        if(v===0) continue;
-        if(!isValidMove(board, r, c, v)){
-          cells[i].classList.add("bad");
-          conflicts++;
-        }
-      }
-    }
-    return conflicts;
-  }
-
-  function check(){
-    render();
-    const conflicts = markConflicts();
-
-    if(conflicts>0){
-      setMessage(`Found ${conflicts} conflict${conflicts===1?"":"s"}.`, "bad");
-      return;
-    }
-    const filled = board.every(v=>v!==0);
-    if(!filled){
-      setMessage("No conflicts so far. Keep going!", "ok");
-      return;
-    }
-    if(solution && board.join("") === solution.join("")){
-      setMessage("Solved! ✅", "ok");
-    } else if(solution) {
-      setMessage("Grid is full but doesn’t match the solution.", "bad");
-    } else {
-      setMessage("Grid is full; couldn’t verify (no solution cached).", "muted");
-    }
-  }
-
-  // Backtracking solver (in-place). Returns true if solved.
   function findEmpty(arr){
     for(let i=0;i<81;i++) if(arr[i]===0) return i;
     return -1;
   }
-
   function candidates(arr, r, c){
     const possible = [];
     for(let v=1; v<=9; v++){
@@ -444,12 +351,9 @@
     }
     return possible;
   }
-
   function solveInPlace(arr){
-    // Choose empty cell with minimum candidates (MRV) for speed.
     let bestI = -1;
     let bestCands = null;
-
     for(let i=0;i<81;i++){
       if(arr[i]!==0) continue;
       const r = Math.floor(i/9), c = i%9;
@@ -461,16 +365,12 @@
         if(cands.length===1) break;
       }
     }
-
-    if(bestI===-1) return true; // no empties
-
+    if(bestI===-1) return true; 
     const r = Math.floor(bestI/9), c = bestI%9;
-    // Small shuffle so solutions aren't always same (not needed, but nice)
     for(let j=bestCands.length-1; j>0; j--){
       const k = Math.floor(Math.random()*(j+1));
       [bestCands[j], bestCands[k]] = [bestCands[k], bestCands[j]];
     }
-
     for(const v of bestCands){
       arr[bestI] = v;
       if(solveInPlace(arr)) return true;
@@ -478,14 +378,12 @@
     }
     return false;
   }
-
   function solve(){
     if(!solution){
-      // try to compute if missing
       const cand = clone(given);
       if(solveInPlace(cand)) solution = cand;
       else {
-        setMessage("This puzzle seems unsolvable (unexpected).", "bad");
+        setMessage("This puzzle seems unsolvable.", "bad");
         return;
       }
     }
@@ -493,27 +391,25 @@
     render();
     setMessage("Solved.", "ok");
   }
-
   function trySetValue(v){
     const i = rcToI(selected.r, selected.c);
-    if(given[i] !== 0) return; // cannot edit givens
-
+    if(given[i] !== 0) return;
     if(v===0){
       board[i] = 0;
       render();
       setMessage("Cleared.");
       return;
     }
-
     if(!inRange(v)) return;
-
     board[i] = v;
-    render();
-    const conflicts = markConflicts();
-    if(conflicts>0) setMessage("That creates a conflict.", "bad");
-    else setMessage("Placed.", "ok");
+    render(); 
+    
+    if (solution && board[i] !== solution[i]) {
+        setMessage("Incorrect!", "bad");
+    } else {
+        setMessage("");
+    }
   }
-
   function moveSel(dr, dc){
     let r = selected.r + dr;
     let c = selected.c + dc;
@@ -523,16 +419,11 @@
     if(c>8) c=8;
     selectCell(r,c);
   }
-
-  // Keyboard handling
   document.addEventListener('keydown', (e) => {
     const key = e.key;
-
-    // Don’t hijack if focus is on a button (Enter/Space etc.)
     const tag = (document.activeElement && document.activeElement.tagName) || "";
     const isButton = tag.toLowerCase() === "button";
     if(isButton && (key === "Enter" || key === " ")) return;
-
     if(key >= '1' && key <= '9'){
       e.preventDefault();
       trySetValue(parseInt(key,10));
@@ -543,31 +434,22 @@
       trySetValue(0);
       return;
     }
-
     if(key === 'ArrowUp'){ e.preventDefault(); moveSel(-1,0); return; }
     if(key === 'ArrowDown'){ e.preventDefault(); moveSel(1,0); return; }
     if(key === 'ArrowLeft'){ e.preventDefault(); moveSel(0,-1); return; }
     if(key === 'ArrowRight'){ e.preventDefault(); moveSel(0,1); return; }
-
-    // Quick actions
     if(key.toLowerCase() === 'n'){ e.preventDefault(); newPuzzle(); return; }
     if(key.toLowerCase() === 'r'){ e.preventDefault(); reset(); return; }
-    if(key.toLowerCase() === 'c'){ e.preventDefault(); check(); return; }
     if(key.toLowerCase() === 's'){ e.preventDefault(); solve(); return; }
   });
-
   function newPuzzle(){
     const { puzzle, index } = randomPuzzle();
     loadPuzzle(puzzle);
     metaEl.textContent = `Puzzle #${index+1} • Filled: ${board.filter(x=>x!==0).length}/81`;
   }
-
   newBtn.addEventListener('click', newPuzzle);
   resetBtn.addEventListener('click', reset);
-  checkBtn.addEventListener('click', check);
   solveBtn.addEventListener('click', solve);
-
-  // Init
   buildGrid();
   newPuzzle();
 })();
